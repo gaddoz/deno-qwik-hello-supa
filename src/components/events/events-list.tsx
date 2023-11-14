@@ -10,7 +10,7 @@ export default component$(() => {
           key={`items-${event.id}`}
           class="card"
         >
-          <div class="title"><a href={`${paths.events }${event.slug}`}>{event.title}</a></div>
+          <div class="title"><a href={`${paths.events }/${event.slug}`}>{event.title}</a></div>
           <div>
             <p>
               <a href={`${paths.events }/${event.slug}`}>info</a>
