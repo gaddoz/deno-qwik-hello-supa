@@ -63,4 +63,8 @@
   .error {
     @apply text-red-500;
   }
+  
+  p {
+    @apply my-1;
+  }
 }
