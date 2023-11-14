@@ -30,9 +30,24 @@ console.log(`Server starter: http://localhost:${port}/app/`);
 
 serve(
   async (request: Request, conn: any) => {
-    const staticResponse = await staticFile(request);
-    if (staticResponse) {
-      return staticResponse;
+    // NOTE: dirty disabled static response
+    const requestUrl = new URL(request.url);
+    const skipStatic = [
+      "/$",
+      "/events/*",
+      "/dashboard/$",
+      "/login/$",
+      "/register/$",
+      "/logout/$",
+    ];
+    const enableStaticResponse = skipStatic.find(
+      (skipPath) => new RegExp(skipPath).test(requestUrl.pathname)
+    ) === undefined;
+    if(enableStaticResponse){
+      const staticResponse = await staticFile(request);
+      if (staticResponse) {
+        return staticResponse;
+      }
     }
 
     // Server-side render this request with Qwik City
