@@ -1,9 +1,8 @@
 name: Deploy
-on:
-  push:
-    branches: main
-  pull_request:
-    branches: main
+on: [push]
+env:
+  PUBLIC_SUPABASE_URL: ${{ vars.PUBLIC_SUPABASE_URL }}
+  PUBLIC_SUPABASE_ANON_KEY: ${{ vars.PUBLIC_SUPABASE_ANON_KEY }}
 
 jobs:
   deploy:

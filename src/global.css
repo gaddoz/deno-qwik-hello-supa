@@ -1,56 +1,66 @@
 /**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151934;
-  --qwik-dark-text: #ffffff;
-}
+@layer components {
 
-html {
-  line-height: 1;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+  header.header {
+	  @apply md:sticky top-0 shadow-md flex bg-white sm:mb-5;
+  }
 
-body {
-  padding: 0;
-  margin: 0;
-  line-height: inherit;
-}
+  header nav.nav {
+	  @apply lg:block font-semibold text-lg top-full left-0 md:top-auto w-full;
+  }
 
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
-html {
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+  header nav.nav ul {
+	  @apply flex flex-col sm:flex-row items-center justify-center text-center bg-gray-100 text-gray-900 sm:bg-transparent sm:text-black;
+  }
 
-body {
-  padding: 0;
-  line-height: inherit;
+  header nav.nav ul li {
+	  @apply w-full md:w-auto p-4 lg:border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-500 duration-200 cursor-pointer;
+  }
+  
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+
+  h1.title {
+	  @apply m-4 ml-3;
+  }
+
+  .events-card-list {
+	  @apply flex gap-2 p-2;
+  }
+
+  .card {
+	  @apply border-2 border-blue-500 p-5 m-2;
+  }
+
+  form {
+	  @apply flex flex-col;
+  }
+
+  form label, form input, form button {
+	  @apply block w-full;
+  }
+
+  form input {
+	  @apply border-2 py-2 px-4;
+  }
+
+  form button {
+	  @apply mt-2;
+  }
+
+  button {
+	  @apply border-2 py-2 px-4;
+  }
+
+  .error {
+    @apply text-red-500;
+  }
 }

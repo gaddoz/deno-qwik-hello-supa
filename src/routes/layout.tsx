@@ -2,10 +2,9 @@ import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
-import Header from "~/components/starter/header/header";
-import Footer from "~/components/starter/footer/footer";
-
 import styles from "./styles.css?inline";
+import Header from "~/components/ui/header";
+import { getSupabaseInstance, getSupabaseSession } from "./plugin";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -24,15 +23,26 @@ export const useServerTimeLoader = routeLoader$(() => {
   };
 });
 
+export const useSession = routeLoader$((event) => {
+  return getSupabaseSession(event);
+});
+
+export const useDbEvents = routeLoader$(async (requestEvent) => {
+  const sb = getSupabaseInstance(requestEvent);
+  const query = sb.from("events").select("*");
+  const { data } = await query;
+  return data;
+});
+
 export default component$(() => {
   useStyles$(styles);
+  useDbEvents();
   return (
     <>
-      <Header />
+      <Header/>
       <main>
         <Slot />
       </main>
-      <Footer />
     </>
   );
 });
