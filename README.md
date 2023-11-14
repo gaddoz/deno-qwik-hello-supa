@@ -1,4 +1,15 @@
-# Qwik City App ⚡️
+# Qwik Starter for Deno with Supabase Auth
+
+Deployed on [Deno](https://deno-qwik-hello-supa.deno.dev/), supabase might be not always ready.
+May be better to setup your own for running a demo. Supabase auth and RSL working ok.
+
+Credits: [wmalarski/qwik-supabase-example](//github.com/wmalarski/qwik-supabase-example)
+
+Notes: 
+- plugin.ts uses eventRequest for supabase emailRedirectTo url.
+- entry.deno.ts contains a hotfix for skipping static responses on / and ssr pages.
+
+## Qwik City App ⚡️
 
 - [Qwik Docs](https://qwik.builder.io/)
 - [Discord](https://qwik.builder.io/chat)

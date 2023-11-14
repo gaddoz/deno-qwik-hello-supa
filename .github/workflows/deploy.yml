@@ -33,6 +33,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "deno-qwik-hello-world"
+          project: "deno-qwik-hello-supa"
           entrypoint: "server/entry.deno.js" # 📝 Update the entrypoint if necessary
           root: "." # 📝 Update the root if necessary

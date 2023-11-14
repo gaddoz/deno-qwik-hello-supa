@@ -12,14 +12,15 @@ export const {
   useSupabaseSignUp,
 } = serverSupabase$(async (event) => {
 
-  const requestUrl = new URL(event.request.url);
   const parsed = await z
     .object({ supabaseKey: z.string(), supabaseUrl: z.string() })
     .parseAsync({
       supabaseKey: event.env.get("PUBLIC_SUPABASE_ANON_KEY"),
       supabaseUrl: event.env.get("PUBLIC_SUPABASE_URL"),
-    });
+  });
 
+  // NOTE: setting the emailRedirectTo with the incoming requestUrl
+  const requestUrl = new URL(event.request.url);
   return {
     emailRedirectTo: `${requestUrl.protocol}//${requestUrl.host}/auth/callback`,
     signInPath: paths.login,

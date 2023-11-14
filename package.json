@@ -1,10 +1,10 @@
 {
-  "name": "deno-qwik-hello-world",
-  "description": "Demo App with Qwik on Deno",
+  "name": "deno-qwik-hello-supa",
+  "description": "Demo App with Qwik on Deno using Supabase Auth and RSL",
   "engines": {
     "node": ">=15.0.0"
   },
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "qwik build",
     "build.client": "vite build",
@@ -30,7 +30,7 @@
     "@typescript-eslint/eslint-plugin": "5.60.1",
     "@typescript-eslint/parser": "5.60.1",
     "autoprefixer": "^10.4.16",
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "eslint-plugin-qwik": "^1.2.5",
     "postcss": "^8.4.31",
     "prettier": "^3.1.0",
