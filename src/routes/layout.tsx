@@ -37,6 +37,7 @@ export const useDbEvents = routeLoader$(async (requestEvent) => {
 export default component$(() => {
   useStyles$(styles);
   useDbEvents();
+  useSession();
   return (
     <>
       <Header/>

@@ -12,7 +12,7 @@ export const MagicLinkForm = component$(() => {
           Email
         </label>
         <input
-          id="email"
+          id="email-magic-link"
           placeholder="Email"
           name="email"
           type="email"

@@ -1,29 +1,42 @@
 import { component$ } from "@builder.io/qwik";
-import { useDocumentHead } from "@builder.io/qwik-city";
+import { Form, Link, useDocumentHead } from "@builder.io/qwik-city";
+import { useSession } from "~/routes/layout";
+import { useSupabaseSignOut } from "~/routes/plugin";
 import { paths } from "~/utils/paths";
 
 export default component$(() => {
   const head = useDocumentHead();
+  const user = useSession();
+  const signOut = useSupabaseSignOut();
   return (
     <>
         <header class="header">
             <nav class="nav">
                 <ul>
                     <li class="active">
-                        <a href={paths.index}>Home</a>
+                        <Link href={paths.index}>Home</Link>
                     </li>
                     <li>
-                        <a href={paths.dashboard}>Dashboard</a>
+                        <Link href={paths.events}>Events</Link>
+                    </li>
+                    {user.value && <>
+                    <li>
+                        <Link href={paths.dashboard}>Dashboard</Link>
                     </li>
                     <li>
-                        <a href={paths.events}>Events</a>
+                        <Form action={signOut}>
+                            <button class="btn">Sign Out</button>
+                        </Form>
+                    </li>
+                    </>}
+                    {!user.value && <>
+                    <li>
+                        <Link href={paths.login}>Login</Link>
                     </li>
                     <li>
-                        <a href={paths.login}>Login</a>
+                        <Link href={paths.register}>Register</Link>
                     </li>
-                    <li>
-                        <a href={paths.register}>Register</a>
-                    </li>
+                    </>}
                 </ul>
             </nav>
         </header>

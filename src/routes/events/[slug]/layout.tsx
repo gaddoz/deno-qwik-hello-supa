@@ -22,10 +22,8 @@ export const useDbEventsBySlug = routeLoader$(async (requestEvent) => {
 export default component$(() => {
   useDbEventsBySlug();
   return (
-    <>
       <main>
         <Slot />
       </main>
-    </>
   );
 });

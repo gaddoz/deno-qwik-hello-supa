@@ -53,17 +53,21 @@
   }
 
   form button {
-	  @apply mt-2;
+	  @apply mt-2 border-2 py-2 px-4;
   }
 
   button {
 	  @apply border-2 py-2 px-4;
   }
 
+  nav button {
+	  @apply border-0 m-0 p-0;
+  }
+
   .error {
     @apply text-red-500;
   }
-  
+
   p {
     @apply my-1;
   }
