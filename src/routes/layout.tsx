@@ -1,10 +1,12 @@
 import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
+import QwikLogo from './../images/qwik.svg?jsx';
 
 import styles from "./styles.css?inline";
 import Header from "~/components/ui/header";
 import { getSupabaseInstance, getSupabaseSession } from "./plugin";
+import npminfo from './../../package.json';
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -41,9 +43,26 @@ export default component$(() => {
   return (
     <>
       <Header/>
-      <main>
+      <main class="container mx-auto">
         <Slot />
       </main>
+      <footer>
+        <div class="flex flex-col items-center justify-center text-center m-5">
+            <div class="flex flex-row">
+              <a href="https://qwik.builder.io" target="_blank">
+                <QwikLogo alt="Qwik" class="w-6 mr-2 mt{-1px}" />
+              </a>
+              <a href="https://deno.land" target="_blank">
+                <img alt="Deno" src="https://dash.deno.com/assets/logo.svg" class="w-5 mr-2" width={5} height={5} />
+              </a>
+              <a href="https://supabase.com" target="_blank">
+                <img alt="supabase" src="https://supabase.com/dashboard/img/supabase-logo.svg" class="w-5" width={5} height={5}/>
+              </a>
+            </div>
+            <div class="mb-2 text-s"><a href="https://github.com/gaddoz/deno-qwik-hello-supa" target="_blank">qwik on deno with supabase</a></div>
+            <div class="mb-2 text-xs"><a href="https://github.com/gaddoz/deno-qwik-hello-supa" target="_blank">[{npminfo.name}@{npminfo.version}]</a></div>
+        </div>
+      </footer>
     </>
   );
 });

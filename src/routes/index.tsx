@@ -4,9 +4,18 @@ import EventList from "~/components/events/events-list";
 
 export default component$(() => {
   return (
-    <div class="card">
-      <EventList></EventList>
-    </div>
+    <>
+      <div class="card">
+        <p>This is a sample app demonstrating edge ssr with deno deploy and qwik.</p>
+        <p>Consumes Auth and Api with RLS from supabase.</p>
+        <p>Here you can see a list of public events.</p>
+        <p>Login and create your events.</p>
+      </div>
+      <div class="card">
+        <p>event list</p>
+        <EventList></EventList>
+      </div>
+    </>
   );
 });
 

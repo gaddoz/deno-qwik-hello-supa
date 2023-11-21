@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { component$ } from "@builder.io/qwik";
-import { type DocumentHead } from "@builder.io/qwik-city";
+import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import EventList from "~/components/events/events-list";
 
 export default component$(() => {
   return (
     <div class="card">
+        <Link href="new/edit">new event</Link>
         <EventList></EventList>
     </div>
   )

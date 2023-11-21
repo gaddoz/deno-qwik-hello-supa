@@ -3,7 +3,7 @@
 Deployed on [Deno](https://deno-qwik-hello-supa.deno.dev/), supabase might be not always ready.
 May be better to setup your own for running a demo. Supabase auth and RSL working ok.
 
-Credits: [wmalarski/qwik-supabase-example](//github.com/wmalarski/qwik-supabase-example)
+Credits: [wmalarski/qwik-supabase-example](https://github.com/wmalarski/qwik-supabase-example)
 
 Notes: 
 - plugin.ts uses eventRequest for supabase emailRedirectTo url.

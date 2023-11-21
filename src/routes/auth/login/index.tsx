@@ -7,7 +7,7 @@ import { MagicLinkForm } from "./MagicLinkForm/MagicLinkForm";
 import { PasswordForm } from "./PasswordForm/PasswordForm";
 import { GitHubForm } from "./GithubForm/GitHubForm";
 
-export const useAnonymousRoute = routeLoader$((event) => {
+export const useAuthRoute = routeLoader$((event) => {
   const session = getSupabaseSession(event);
   if (session?.user.email) {
     throw event.redirect(302, paths.dashboard);
@@ -16,7 +16,7 @@ export const useAnonymousRoute = routeLoader$((event) => {
 });
 
 export default component$(() => {
-  useAnonymousRoute();
+  useAuthRoute();
   return (
     <div class="flex flex-col gap-2">
       <div class="flex flex-col gap-6">

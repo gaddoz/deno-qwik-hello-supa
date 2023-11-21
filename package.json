@@ -1,6 +1,7 @@
 {
   "name": "deno-qwik-hello-supa",
   "description": "Demo App with Qwik on Deno using Supabase Auth and RSL",
+  "version": "0.0.1",
   "engines": {
     "node": ">=15.0.0"
   },
@@ -25,20 +26,24 @@
   "devDependencies": {
     "@builder.io/qwik": "^1.2.17",
     "@builder.io/qwik-city": "^1.2.17",
+    "@modular-forms/qwik": "^0.21.0",
+    "@supabase/supabase-js": "^2.38.4",
     "@types/eslint": "8.40.2",
     "@types/node": "^20.3.3",
     "@typescript-eslint/eslint-plugin": "5.60.1",
     "@typescript-eslint/parser": "5.60.1",
+    "@qwikest/icons": "^0.0.13",
     "autoprefixer": "^10.4.16",
+    "clsx": "^2.0.0",
     "eslint": "8.45.0",
     "eslint-plugin-qwik": "^1.2.5",
     "postcss": "^8.4.31",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.4",
-    "@supabase/supabase-js": "^2.38.4",
     "tailwindcss": "3.3.3",
-    "typescript": "5.1.6",
+    "typescript": "5.3.2",
     "undici": "5.22.1",
+    "valibot": "^0.20.1",
     "vite": "4.3.9",
     "vite-tsconfig-paths": "4.2.0"
   }

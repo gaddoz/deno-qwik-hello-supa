@@ -38,7 +38,7 @@ export const PasswordForm = component$(() => {
         </span>
       </div>
 
-      <span class="error">{action.value?.formErrors?.[0]}</span>
+      <span class="error">{action.value?.formErrors[0]}</span>
       <button class="btn btn-primary mt-2" type="submit">
         Sign In
       </button>

@@ -36,7 +36,7 @@ export const RegisterForm = component$(() => {
         </span>
       </div>
 
-      <span class="error">{signUp.value?.formErrors?.[0]}</span>
+      <span class="error">{signUp.value?.formErrors[0]}</span>
 
       <button class={"btn btn-primary mt-2"} type="submit">
         Sign Up

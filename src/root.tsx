@@ -23,6 +23,22 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
         <ServiceWorkerRegister />
+        <script
+          dangerouslySetInnerHTML={`
+            (function() {
+              function setTheme(theme) {
+                document.documentElement.className = theme;
+                localStorage.setItem('theme', theme);
+              }
+              var theme = localStorage.getItem('theme');
+              if (theme) {
+                setTheme(theme);
+              } else {
+                setTheme('dark');
+              }
+            })();
+          `}
+        ></script>
       </head>
       <body lang="en">
         <RouterOutlet />

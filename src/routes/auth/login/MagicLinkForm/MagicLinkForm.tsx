@@ -20,7 +20,7 @@ export const MagicLinkForm = component$(() => {
         <span class="error">{JSON.stringify(action.value)}</span>
       </div>
 
-      <span class="error">{action.value?.formErrors?.[0]}</span>
+      <span class="error">{action.value?.formErrors[0]}</span>
       <button class="btn btn-primary mt-2" type="submit">
         Login with Magic Link
       </button>
