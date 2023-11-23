@@ -129,6 +129,10 @@
     @apply my-1;
   }
 
+  main {
+    min-height: calc(100svh - 270px);
+  }
+
   /* mobile nav open closed and mobile title*/
   @media (max-width: 640px) {
     nav.nav.closed ul {
