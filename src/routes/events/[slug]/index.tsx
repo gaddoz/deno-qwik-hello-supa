@@ -12,7 +12,7 @@ export default component$(() => {
   return (
     <div class="card">
       <div class="flex justify-between items-start items-center">
-        <h1 class="title">{event.value.title} **</h1>
+        <h1 class="title">{event.value.title}</h1>
         {user.value?.user.id === event.value.owner_id && <>
             {editMode.value !== true && <Link href='edit' class="btn btn-primary">edit</Link>}
         </>}
