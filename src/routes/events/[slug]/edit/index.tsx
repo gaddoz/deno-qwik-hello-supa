@@ -185,10 +185,10 @@ export default component$(() => {
             </>
           )}
         </Field>
-        <button type="submit" class="primary">Save</button>
-        <button type="button" class="secondary">Cancel (todo)</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary">Cancel (todo)</button>
       </Form>
-      <div><a href={paths.events}>back</a></div>
+      <div><a href={paths.events} class="btn btn-secondary">back</a></div>
     </div>
   );
 });
