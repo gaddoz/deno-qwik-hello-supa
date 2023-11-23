@@ -60,11 +60,19 @@
   }
   
   .btn-primary {
-    @apply rounded-md py-2 px-4 bg-blue-500 text-white font-semibold shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75;
+    @apply rounded-md py-2 px-4 bg-blue-500 text-white font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-75;
+  }
+
+  .btn-secondary {
+    @apply rounded-md py-2 px-4 bg-red-500 text-white font-semibold shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-opacity-75;
   }
 
   h1.title {
-	  @apply m-4 ml-3;
+	  @apply m-4 ml-3 capitalize font-bold text-lg;
+  }
+
+  .card h1.title {
+    @apply m-0;
   }
 
   .events-card-list {
@@ -93,7 +101,7 @@
   }
 
   form input {
-	  @apply border rounded-md py-2 px-4;
+	  @apply rounded-md py-2 px-4;
   }
 
   .dark form input,
@@ -102,15 +110,15 @@
   }
 
   form button {
-	  @apply mt-2 border rounded-sm py-2 px-4;
+	  @apply mt-2 rounded-sm py-2 px-4;
   }
 
   button {
-	  @apply border py-2 px-4;
+	  @apply py-2 px-4;
   }
 
   nav button {
-	  @apply border-0 m-0 p-0 text-left;
+	  @apply m-0 p-0 text-left;
   }
 
   .error {

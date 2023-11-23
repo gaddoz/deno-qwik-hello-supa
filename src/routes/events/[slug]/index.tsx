@@ -11,13 +11,22 @@ export default component$(() => {
   const user = useSession();
   return (
     <div class="card">
-      <h3>{event.value.title}</h3>
-      {user.value?.user.id === event.value.owner_id && <>
-          {editMode.value !== true && <Link href='edit'>[edit]</Link>}
-      </>}
-      <div>slug: {event.value.title}</div>
-      <div>is public {event.value.public==0?'yes':'no'}</div>
-      <div><a href={paths.events}>back</a></div>
+      <div class="flex justify-between items-start items-center">
+        <h1 class="title">{event.value.title} **</h1>
+        {user.value?.user.id === event.value.owner_id && <>
+            {editMode.value !== true && <Link href='edit' class="btn btn-primary">edit</Link>}
+        </>}
+      </div>
+      <div>
+        <p>is public {event.value.public==0?'yes':'no'}</p>
+        {event.value.description &&<p>
+          Description: {event.value.description}
+        </p>}
+        {event.value.location && <p>
+          Location: {event.value.location}
+        </p>}
+      </div>
+      <div class="mt-5"><a href={paths.events} class="btn btn-secondary">back</a></div>
     </div>
   );
 });

@@ -10,9 +10,10 @@ export default component$(() => {
         <p>Consumes Auth and Api with RLS from supabase.</p>
         <p>Here you can see a list of public events.</p>
         <p>Login and create your events.</p>
+        <p><a href="https://github.com/gaddoz/deno-qwik-hello-world/" target="_blank">Source code available on github: github.com/gaddoz/deno-qwik-hello-world</a></p>
       </div>
       <div class="card">
-        <p>event list</p>
+        <h1 class="title">event list</h1>
         <EventList></EventList>
       </div>
     </>

@@ -10,12 +10,15 @@ export default component$(() => {
           key={`items-${event.id}`}
           class="card"
         >
-          <div class="title"><a href={`${paths.events }/${event.slug}`}>{event.title}</a></div>
+          <h1 class="title"><a href={`${paths.events }/${event.slug}`}>{event.title}</a></h1>
           <div>
-            <p>
-              <a href={`${paths.events }/${event.slug}`}>info</a>
-            </p>
-            <p><a href={`${paths.events }/${event.slug}`}>details</a></p>
+            {event.description &&<p>
+              Description: {event.description}
+            </p>}
+            {event.location && <p>
+              Location: {event.location}
+            </p>}
+            <p class="mt-2"><a href={`${paths.events }/${event.slug}`} class="btn btn-primary">details</a></p>
           </div>
         </div>
       ))}

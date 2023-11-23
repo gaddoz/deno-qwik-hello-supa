@@ -6,8 +6,12 @@ import EventList from "~/components/events/events-list";
 export default component$(() => {
   return (
     <div class="card">
-        <Link href="new/edit">new event</Link>
-        <EventList></EventList>
+        <div class="p-2">
+          <Link href="new/edit" class="btn btn-primary">new event</Link>
+        </div>
+        <div>
+          <EventList></EventList>
+        </div>
     </div>
   )
 });
