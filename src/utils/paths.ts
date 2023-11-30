@@ -6,4 +6,5 @@ export const paths = {
   index: "/",
   login: "/auth/login",
   register: "/auth/register",
+  sports: "/sports",
 };

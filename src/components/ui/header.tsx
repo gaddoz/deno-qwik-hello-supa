@@ -30,6 +30,9 @@ export default component$(() => {
                     <li>
                         <a href={paths.events}>Events</a>
                     </li>
+                    <li>
+                        <a href={paths.sports}>Sports</a>
+                    </li>
                     {user.value && <>
                     <li>
                         <a href={paths.dashboard}>Dashboard</a>
