@@ -90,7 +90,10 @@ export const serverSupabaseQrl = <
 
       const supabase = event.sharedMap.get(supabaseSharedKey) as Supabase;
 
-      const result = await supabase.auth.signInWithPassword(data);
+      const result = await supabase.auth.signInWithPassword({
+        email: data.email,
+        password: data.password,
+      });
 
       if (result.error || !result.data.session) {
         const status = result.error?.status || 400;
@@ -138,9 +141,15 @@ export const serverSupabaseQrl = <
 
       const supabase = event.sharedMap.get(supabaseSharedKey) as Supabase;
 
-      const result = await supabase.auth.signInWithOtp({
+      /* {
         options: { emailRedirectTo: config.emailRedirectTo },
         ...data,
+      }*/
+      const result = await supabase.auth.signInWithOtp({
+        email: data.email,
+        options: {
+          emailRedirectTo: config.emailRedirectTo
+        }
       });
 
       if (result.error) {
@@ -167,10 +176,13 @@ export const serverSupabaseQrl = <
 
       const supabase = event.sharedMap.get(supabaseSharedKey) as Supabase;
 
-      const result = await supabase.auth.signUp({
-        options: { emailRedirectTo: config.emailRedirectTo },
-        ...data,
-      });
+      const result = await supabase.auth.signUp(
+        {
+          email:data.email,
+          password:data.password,
+          options: { emailRedirectTo: config.emailRedirectTo },
+        }
+      );
 
       if (result.error) {
         const status = result.error.status || 400;
