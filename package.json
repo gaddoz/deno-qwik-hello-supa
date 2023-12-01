@@ -7,7 +7,7 @@
   },
   "private": false,
   "scripts": {
-    "build": "qwik build",
+    "build": "npm run gen-api && qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/deno/vite.config.ts",
@@ -21,12 +21,14 @@
     "preview": "qwik build preview && vite preview --open",
     "serve": "deno run --allow-net --allow-read --allow-env server/entry.deno.js",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "gen-api": "openapi-generator-cli generate -i docs/openapi.yaml -g typescript-fetch -o src/lib/generated-sources/openapi --additional-properties=supportsES6=true,withInterfaces=true"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.2.17",
     "@builder.io/qwik-city": "^1.2.17",
     "@modular-forms/qwik": "^0.21.0",
+    "@openapitools/openapi-generator-cli": "^2.7.0",
     "@qwikest/icons": "^0.0.13",
     "@supabase/supabase-js": "^2.38.4",
     "@types/eslint": "8.40.2",

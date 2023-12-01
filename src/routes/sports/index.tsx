@@ -1,29 +1,25 @@
 import { component$ } from "@builder.io/qwik";
 import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
-import { SportsApi } from "~/lib/typescript-fetch-client-generated";
+import {  Configuration, SportsApi } from "~/lib/generated-sources/openapi";
+
 
 export const useSports = routeLoader$((event) => {
   const basepath = event.env.get("PUBLIC_SUPABASE_URL")+'/rest/v1';
   const apikey = event.env.get("PUBLIC_SUPABASE_ANON_KEY");
-  const api = new SportsApi({
-      basePath: basepath,
-  }, basepath, fetch);
+  const config: Configuration = new Configuration({
+    basePath: basepath,
+    fetchApi: fetch,
+    headers: {
+      apiKey: apikey ?? '',
+    }
+  });
+  const api = new SportsApi(config);
   
   return api.sportsGet(
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
     {
-      headers: {
-        apikey:apikey
-    }}
+    },
+    {
+    }
     ).then(res => {
       console.log("🚀 ~ file: sports/index.tsx:24 ~ useSports ~ res:", res);
       return res;
